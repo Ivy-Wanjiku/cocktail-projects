@@ -73,3 +73,49 @@ fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin")
   });
 })
  .catch(error => console.error(error));
+
+
+
+
+// // Fetch the cocktail data from The Cocktail DB API
+//   fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin")
+//     .then(response => response.json())
+//     .then(data => {
+//       // Process the cocktail data
+//       var drinks = data.drinks;
+//       var cocktailsDiv = document.getElementById("cocktails");
+//       // Loop over the drinks and replace the images
+//       for (var i = 0; i < drinks.length; i++) {
+//         var drink = drinks[i];
+//         var id = drink.idDrink;
+//         var name = drink.strDrink;
+//         // Fetch a random image from Unsplash
+//         fetch(`https://api.unsplash.com/photos/random?client_id=`)
+//           .then(response => response.json())
+//           .then(data => {
+//             var image = data.urls.raw;
+//             // Create a cocktail card with the new image
+//             var cocktailCard = document.createElement("div");
+//             cocktailCard.innerHTML = `
+//               <img src="${image}" alt="${name}">
+//               <h2>${name}</h2>
+//             `;
+//             cocktailsDiv.appendChild(cocktailCard);
+//             // Update the image URL in The Cocktail DB API
+//             updateImageInCocktailDB(id, image);
+//           })
+//           .catch(error => console.error(error));
+//       }
+//     })
+//     .catch(error => console.error(error));
+//   // Function to update the image URL in The Cocktail DB API
+//   function updateImageInCocktailDB(id, imageUrl) {
+//     fetch(`https://www.thecocktaildb.com/api/json/v1/1/update.php?i=${id}&img=${imageUrl}`, {
+//       method: 'POST'
+//     })
+//       .then(response => response.json())
+//       .then(data => {
+//         console.log(data);
+//       })
+//       .catch(error => console.error(error));
+//   }
